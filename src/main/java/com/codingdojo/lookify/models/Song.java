@@ -74,6 +74,17 @@ public class Song {
 		this.album = album;
 		this.year = year;
 	}
+    
+    /*
+    public Song(String title, String artist, Double length, int rating, String album, int year) {
+		this.title = title;
+		this.artist = artist;
+		this.length = length;
+		this.rating = rating;
+		this.album = album;
+		this.year = year;
+	}
+	*/
 
 	public Long getId() {return id;}
 	public void setId(Long id) {this.id = id;}
