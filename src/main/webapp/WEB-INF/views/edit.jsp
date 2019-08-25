@@ -43,11 +43,14 @@
             </div>
         </nav>
     </section>
-
+	
+	
 	<section class="add-form mt-5">
-		<div class="d-flex justify-content-center align-items-center container">			
+		<div class="d-flex justify-content-center align-items-center container">
+		<!--  -->			
 			<form:form action="/updateSong/${song.id}" method="post" modelAttribute="song">
-			<!-- <input type="hidden" name="_method" value="put">  -->
+			<input type="hidden" name="_method" value="put">
+			<!-- <input type="hidden" name="_method" value="put"> -->
 				
 				<div class="form-group row">
 		    		<label for="title" class="col-sm-2 col-form-label">Title</label>
@@ -89,6 +92,17 @@
 		    		</div>
 		 		 </div>
 		 		 
+		 		 <!--  
+		 		 <div class="form-group row">
+		    		<label for="rating" class="col-sm-2 col-form-label">Rating</label>
+		    		<div class="col-sm-10">
+		    			<form:input path="rating" class="form-control"/>
+		    			<form:errors path="rating" />
+		    		</div>
+		 		 </div>
+		 		 -->
+		 		 
+		 		 <!-- 	-->
 		 		 <div class="form-group row">
 		    		<label for="rating" class="col-sm-2 col-form-label">Rating</label>
 		    		<div class="col-sm-10">
@@ -108,11 +122,59 @@
 						<form:errors path="rating" />
 		    		</div>
 		 		 </div>
+		 		 
 				
 				<input id="singlebutton" class="btn btn-primary btn-sm btn-block" type="submit" value="Save Changes"/>
 				<a class="btn btn-primary btn-sm btn-block" href="/delete/${song.id}" role="button">Delete</a>
 				
 			</form:form>
+			
+			
+			<!-- 
+			<div class="d-flex justify-content-center align-items-center container">
+				<form:form action="/updateSong/${song.id}" method="post" modelAttribute="song">
+				<input type="hidden" name="_method" value="put">
+					<table class="table table-borderless table-responsive-md">
+					
+						<tr>
+							<td><form:label path="title">title</form:label></td>
+			                <td><form:input path="title" /></td>
+			                <td><form:errors path="title" /></td>
+						</tr>
+						<tr>
+							<td><form:label path="artist">artist</form:label></td>
+			                <td><form:input path="artist" /></td>
+			                <td><form:errors path="artist" /></td>
+						</tr>
+						<tr>
+							<td><form:label path="album">album</form:label></td>
+			                <td><form:input path="album" /></td>
+			                <td><form:errors path="album" /></td>
+						</tr>
+						<tr>
+							<td><form:label path="year">year</form:label></td>
+			                <td><form:input path="year" /></td>
+			                <td><form:errors path="year" /></td>
+						</tr>
+						<tr>
+							<td><form:label path="length">length</form:label></td>
+			                <td><form:input path="length" /></td>
+			                <td><form:errors path="length" /></td>
+						</tr>
+						<tr>
+							<td><form:label path="rating">rating</form:label></td>
+			                <td><form:input path="rating" /></td>
+			                <td><form:errors path="rating" /></td>
+						</tr>
+						<tr>
+							<td><input id="singlebutton" class="btn-md btn-primary" type="submit" value="Submit"/></td>
+						</tr>
+					</table>
+				</form:form> 
+			</div>
+			-->
+			
+			
 		</div>
 	</section>
 

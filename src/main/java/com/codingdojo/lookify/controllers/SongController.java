@@ -11,7 +11,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -76,7 +78,8 @@ private final SongService songService;
 	}
 	
 	// Commit edit of one EXISTING song route (with POST Mapping)
-	@PostMapping("/updadteSong/{id}")
+	//@RequestMapping(value="/updateSong/{id}", method=RequestMethod.PUT)
+	@PutMapping(value="/updadteSong/{id}")
 	public String updateSong(@Valid @ModelAttribute("song") Song song, BindingResult result, RedirectAttributes flash) {
 		if(result.hasErrors()) {
 			flash.addFlashAttribute("errors", result.getAllErrors());
